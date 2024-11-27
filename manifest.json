@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "Website Helper",
+    "version": "1.0",
+    "description": "A Chrome extension to summarize websites and ask questions.",
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "48": "icons/icon-48.png"
+      }
+    },
+    "icons": {
+      "48": "icons/icon-48.png"
+    },
+    "permissions": ["activeTab"]
+  }
+  
