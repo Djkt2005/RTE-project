@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif; /* Premium and modern font */
 }
 
 /* Body Styling */
@@ -13,47 +13,72 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden; /* No scrolling allowed */
+    background-color: #000000; /* Pure black background for dark theme */
+    color: #ffffff; /* White text for readability */
 }
 
 /* Popup Container */
 #popup-container {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #f5f5f5, #e0e0e0); /* Professional gradient */
+    background: #1c1c1c; /* Slightly lighter than black for depth */
     display: flex;
     flex-direction: column;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Subtle elevated shadow */
+    animation: fadeIn 1s ease; /* Smooth entry animation */
 }
 
 /* Navigation Bar */
 #navbar {
     display: flex;
     justify-content: space-around;
-    background: #0078d4; /* Navigation background */
-    padding: 10px 0;
-    border-bottom: 2px solid #0056a3;
+    background: #333333; /* Dark gray navigation bar */
+    padding: 15px 0;
+    border-bottom: 2px solid #444444; /* Subtle border */
+    animation: slideDown 1s ease;
 }
 
 .nav-btn {
     flex: 1;
     text-align: center;
     font-size: 1rem;
-    color: #fff;
+    color: #ffffff; /* White text for navigation buttons */
     border: none;
     background: transparent;
-    padding: 10px;
+    padding: 12px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: #ffffff; /* Subtle underline for hover effect */
+    transition: width 0.3s ease, left 0.3s ease;
+    border-radius: 3px;
 }
 
 .nav-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
+    color: #ffeb3b; /* Gold color for hover to match dark theme */
+    transform: scale(1.1); /* Slight enlarge on hover */
+}
+
+.nav-btn:hover::after {
+    width: 100%;
+    left: 0;
 }
 
 .nav-btn.active {
-    background: #0056a3;
-    border-radius: 5px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Vibrant gradient for active button */
+    color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Content Area */
@@ -64,33 +89,103 @@ body {
     justify-content: start;
     align-items: center;
     overflow: hidden; /* No scrolling inside the content */
-    height: calc(100% - 50px); /* Leaves space for the navigation bar */
+    height: calc(100% - 60px); /* Leaves space for the navigation bar */
+    animation: contentLoad 0.8s ease;
 }
 
 /* Section Styling */
-#summary-section {
+#summary-section, #chatbot-section {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#summary-section {
+    animation: fadeIn 0.8s ease;
 }
 
 #chatbot-section {
-    width: 100%;
-    height: 100%;
     display: none; /* Hidden by default */
+    justify-content: start; /* Aligns chatbot view to start */
+    padding: 20px; /* Adds spacing for chatbot content */
 }
 
-/* Visible Chatbot Section */
+/* Div Styling for Summary Output */
+.summary-output {
+    width: 90%;
+    max-height: 70%; /* Limits height and makes it scrollable if content overflows */
+    padding: 15px;
+    border: 2px solid #ffffff; /* White border */
+    border-radius: 10px;
+    overflow-y: auto; /* Adds scroll for overflowing content */
+    background: #2c2c2c; /* Dark gray for content area */
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 1rem;
+    color: #ffffff;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.8s ease;
+}
+
+.summary-output::-webkit-scrollbar {
+    width: 10px;
+}
+
+.summary-output::-webkit-scrollbar-thumb {
+    background: #555555; /* Subtle scrollbar thumb */
+    border-radius: 5px;
+}
+
+.summary-output::-webkit-scrollbar-track {
+    background: #333333;
+}
+
+/* Chatbot Section Styling */
 #chatbot-section iframe {
-    width: 100%;
-    height: 100%;
-    border: none; /* Removes border around iframe */
+    width: 85%; /* Does not take up full width */
+    height: 85%; /* Leaves space for padding */
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.8s ease;
 }
 
 /* Show Chatbot Section */
 #chatbot-section.active {
-    display: flex; /* Flex to center content */
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes contentLoad {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
