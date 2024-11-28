@@ -2,16 +2,17 @@
   "manifest_version": 3,
   "name": "Website Helper",
   "version": "1.1",
-  "description": "A Chrome extension with a 90-minute countdown timer in the badge.",
+  "description": "Chrome extension that help you with your work",
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
       "48": "icons/icon-48.png"
     },
-    "default_title": "90-Minute Countdown Timer"
+    "default_title": "Web Helper"
   },
   "background": {
     "service_worker": "timer.js"
   },
-  "permissions": ["storage", "alarms", "notifications"]
+  "permissions": ["storage", "alarms", "notifications","tabs" ,"activeTab"],
+  "host_permissions": ["<all_urls>"]
 }
