@@ -3,37 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Helper</title>
+    <title>Popup</title>
     <link rel="stylesheet" href="popup.css">
 </head>
 <body>
     <div id="popup-container">
-        <!-- Initial view -->
-        <div id="main-view">
-            <h1 class="title">Website Helper</h1>
-            <p class="subtitle">What would you like to do?</p>
-            <div id="button-container">
-                <button id="summarize-button" class="animated-button">Summarize Website</button>
-                <button id="ask-question-button" class="animated-button">Ask a Question</button>
-            </div>
-        </div>
+        <!-- Navigation Bar -->
+        <nav id="navbar">
+            <button id="summary-btn" class="nav-btn active">Summary</button>
+            <button id="chatbot-btn" class="nav-btn">Chatbot</button>
+        </nav>
 
-        <!-- Summarize view -->
-        <div id="summarize-view" class="hidden">
-            <h1 class="title">Summarize Website</h1>
-            <textarea class="styled-textarea" placeholder="Your summary will appear here..." readonly></textarea>
-            <button id="back-from-summarize" class="styled-button">Back</button>
-        </div>
+        <!-- Content Area -->
+        <div id="content-area">
+            <!-- Summary Section -->
+            <section id="summary-section">
+                <h1 class="section-title">Summary</h1>
+                <textarea class="styled-textarea" placeholder="The summary will appear here..." readonly></textarea>
+            </section>
 
-        <!-- Ask Question view -->
-        <div id="question-view" class="hidden">
-            <h1 class="title">Ask a Question</h1>
-            <textarea id="question-input" class="styled-textarea" placeholder="Type your question here..."></textarea>
-            <button id="submit-question" class="styled-button">Submit</button>
-            <div class="answer-box" id="answer-box">
-                <p>Answer will appear here...</p>
-            </div>
-            <button id="back-from-question" class="styled-button">Back</button>
+            <!-- Chatbot Section (Hidden by Default) -->
+            <section id="chatbot-section" class="hidden">
+                <h1 class="section-title">Chatbot</h1>
+                <textarea class="styled-textarea" placeholder="Type your question here..."></textarea>
+                <button class="styled-button">Ask</button>
+                <div class="answer-box">The chatbot response will appear here.</div>
+            </section>
         </div>
     </div>
 
