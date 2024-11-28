@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup</title>
+    <link rel="stylesheet" href="popup.css">
+    <style>
+        /* Simple black background */
+        body {
+            background-color: #121212; /* Dark blackish background */
+            color: #ffffff; /* Ensure text is readable with white font color */
+        }
+    </style>
+</head>
+<body>
+    <div id="popup-container">
+        <!-- Navigation Bar -->
+        <nav id="navbar">
+            <button id="summary-btn" class="nav-btn active">Summary</button>
+            <button id="chatbot-btn" class="nav-btn">Chatbot</button>
+        </nav>
+
+        <!-- Content Area -->
+        <div id="content-area">
+            <!-- Summary Section -->
+            <section id="summary-section">
+                <h1 class="section-title">Summary</h1>
+                <div class="summary-output">
+                    <!-- Summary content will be dynamically updated here -->
+                    <p id="summary">AI Response: Counter-Strike: Global Offensive (CS:GO), released in 2012, is a hugely popular multiplayer first-person shooter that pits Terrorists against Counter-Terrorists in objective-based game modes like bomb defusal and hostage rescue.  Initially a paid game, it transitioned to free-to-play in 2018, generating revenue through cosmetic items.  CS:GO boasts a massive player base and a thriving esports scene, with professional leagues and tournaments featuring substantial prize pools.  While initially praised for its faithfulness to the series and gameplay, it received some criticism for early features and console-PC differences.  The game underwent significant updates throughout its lifespan, including new maps, game modes (like the battle royale "Danger Zone"), cosmetic items creating a virtual economy (which also led to legal issues surrounding gambling sites), and anti-cheat measures like Prime Matchmaking and Trust Factor.  In 2023, CS:GO was succeeded by Counter-Strike 2, a major update utilizing the Source 2 engine, although the original remains playable on community servers and older consoles.  Despite some controversy surrounding removed content in CS2, CS:GO's legacy as one of the most successful and influential esports titles remains firmly established.</p>
+                </div>
+            </section>
+
+            <!-- Chatbot Section (Initially Hidden) -->
+            <section id="chatbot-section" class="hidden">
+                <!-- Chatbot iframe will load here dynamically -->
+            </section>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
