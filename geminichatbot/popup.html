@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div id="popup-container">
+        <!-- Navigation Bar -->
+        <nav id="navbar">
+            <button id="summary-btn" class="nav-btn active">Summary</button>
+            <button id="chatbot-btn" class="nav-btn">Chatbot</button>
+        </nav>
+
+        <!-- Content Area -->
+        <div id="content-area">
+            <!-- Summary Section -->
+            <section id="summary-section">
+                <h1 class="section-title">Summary</h1>
+                <div id="summary-container">
+                    <!-- Summary content will be dynamically updated here -->
+                    <p>Loading...</p>
+                </div>
+            </section>
+
+            <!-- Chatbot Section (Initially Hidden) -->
+            <section id="chatbot-section" class="hidden">
+                <!-- Chatbot iframe will load here dynamically -->
+            </section>
+        </div>
+        <h1>AI Prompt Interaction</h1>
+        <textarea id="userInput" rows="4" cols="50" placeholder="Type your prompt here..."></textarea>
+        <br>
+        <button id="sendPrompt">Send Prompt</button>
+        <div id="response">Response will appear here.</div>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
