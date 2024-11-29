@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prompt Interaction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #response {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            white-space: pre-wrap;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AA==">
+
+</head>
+<body>
+    <h1>AI Prompt Interaction</h1>
+    <textarea id="userInput" rows="4" cols="50" placeholder="Type your prompt here..."></textarea>
+    <br>
+    <button id="sendPrompt">Send Prompt</button>
+    <div id="response">Response will appear here.</div>
+
+    <script type="module" src="./index.js"></script>
+</body>
+</html>
