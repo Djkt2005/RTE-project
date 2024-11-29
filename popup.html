@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div id="popup-container">
+        <nav id="navbar">
+            <button id="summary-btn" class="nav-btn active">Summary</button>
+            <button id="chatbot-btn" class="nav-btn">Chatbot</button>
+        </nav>
+        <div id="content-area">
+            <section id="summary-section">
+                <h1 class="section-title">Summary</h1>
+                <div id="summary-container">
+                    <p>Loading...</p>
+                </div>
+            </section>
+            <section id="chatbot-section" class="hidden">
+                <div id="chat-display"></div>
+                <div id="chat-input-container">
+                    <input type="text" id="chat-input" placeholder="Type your message here..." />
+                    <button id="send-btn">Send</button>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
