@@ -1,16 +1,16 @@
 {
-    "name" : "simple ad-blocker",
-    "version" : "1.0.0",
+    "name": "simple ad-blocker",
+    "version": "1.0.0",
     "manifest_version": 3,
     "permissions": [
         "declarativeNetRequest"
     ],
-    "declaraticve_net_request" :{
-        "rule-resources" : [
+    "declarative_net_request": {
+        "rule_resources": [
             {
-                "id" : "ruleset_1",
-                "enabled" : true,
-                "path" : "rules.json"
+                "id": "ruleset_1",
+                "enabled": true,
+                "path": "rules.json"
             }
         ]
     }
