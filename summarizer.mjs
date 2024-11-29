@@ -32,7 +32,7 @@ async function start(url) {
 
         // Scrape the paragraphs from the page
         const paragraphs = await page.evaluate(() => {
-            const elements = Array.from(document.querySelectorAll('body'));
+            const elements = Array.from(document.querySelectorAll('div.mw-parser-output p'));
             return elements.map(p => p.textContent.trim()).filter(text => text.length > 0);
         });
 

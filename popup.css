@@ -93,72 +93,98 @@ body {
     animation: contentLoad 0.8s ease;
 }
 
-/* Section Styling */
-#summary-section, #chatbot-section {
+/* Summary Section */
+#summary-section {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    overflow-y: auto; /* Scrollable if content exceeds height */
+}
+
+/* Chatbot Section */
+#chatbot-section {
+    width: 90%; /* Does not take up full width */
+    height: 90%; /* Leaves space for padding */
+    margin: auto; /* Centers the section horizontally and vertically */
+    display: none; /* Hidden by default */
     justify-content: center;
     align-items: center;
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    background-color: #2c2c2c; /* Matches the dark theme */
+    padding: 20px; /* Adds space inside the section */
+    border: 2px solid #444444; /* Adds a subtle border */
+    border-radius: 15px; /* Rounded corners for a container-like look */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
-#summary-section {
-    animation: fadeIn 0.8s ease;
-}
-
-#chatbot-section {
-    display: none; /* Hidden by default */
-    justify-content: start; /* Aligns chatbot view to start */
-    padding: 20px; /* Adds spacing for chatbot content */
-}
-
-/* Div Styling for Summary Output */
-.summary-output {
-    width: 90%;
-    max-height: 70%; /* Limits height and makes it scrollable if content overflows */
-    padding: 15px;
-    border: 2px solid #ffffff; /* White border */
-    border-radius: 10px;
-    overflow-y: auto; /* Adds scroll for overflowing content */
-    background: #2c2c2c; /* Dark gray for content area */
-    font-family: 'Poppins', Arial, sans-serif;
-    font-size: 1rem;
-    color: #ffffff;
-    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: slideUp 0.8s ease;
-}
-
-.summary-output::-webkit-scrollbar {
-    width: 10px;
-}
-
-.summary-output::-webkit-scrollbar-thumb {
-    background: #555555; /* Subtle scrollbar thumb */
-    border-radius: 5px;
-}
-
-.summary-output::-webkit-scrollbar-track {
-    background: #333333;
-}
-
-/* Chatbot Section Styling */
+/* Chatbot Iframe */
 #chatbot-section iframe {
-    width: 85%; /* Does not take up full width */
-    height: 85%; /* Leaves space for padding */
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 0.8s ease;
+    width: 100%; /* Fills the width of the container */
+    height: 100%; /* Fills the height of the container */
+    border: none; /* Removes default border around iframe */
+    border-radius: 10px; /* Matches the container's rounded corners */
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight inner shadow for depth */
+    background-color: #1c1c1c; /* Matches the popup background */
 }
 
-/* Show Chatbot Section */
+/* Chatbot Section Active */
 #chatbot-section.active {
-    display: flex;
+    display: flex; /* Makes it visible when active */
     opacity: 1;
     transform: translateY(0);
 }
+
+
+/* Summary Container */
+#summary-container {
+    margin: 15px; /* Adds spacing around the container */
+    padding: 20px; /* Adds spacing inside the container */
+    border: 2px solid #444444; /* Adds a subtle border */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #2c2c2c; /* Matches dark theme */
+    color: #ffffff; /* Ensures text is readable */
+    max-height: 80%; /* Limits the container height */
+    overflow-y: auto; /* Enables scrolling if content overflows */
+    font-size: 1.2rem; /* Makes text slightly larger */
+    line-height: 1.6; /* Improves readability */
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+}
+
+/* Summary Heading */
+.section-title {
+    position: sticky; /* Keeps the heading fixed at the top */
+    top: 0; /* Position it at the top of the container */
+    background-color: #2c2c2c; /* Matches container background */
+    z-index: 5; /* Ensures it stays above the scrolling content */
+    padding: 10px 0; /* Adds spacing inside the heading */
+    text-align: center; /* Centers the heading */
+    font-size: 1.5rem; /* Makes the heading larger */
+    font-weight: bold; /* Emphasizes the heading */
+    border-bottom: 2px solid #444444;
+}
+
+/* Typewriter Effect */
+.typewriter-effect {
+    display: inline-block; /* Prevent line breaks during typing */
+    overflow: hidden; /* Hide overflow */
+    border-right: 3px solid #ffffff; /* Cursor effect */
+    animation: blink 0.6s step-end infinite;
+    white-space: normal; /* Allow line wrapping */
+    word-wrap: break-word; /* Ensure long words wrap properly */
+}
+
+/* Adjust Blinking Cursor Animation */
+@keyframes blink {
+    from {
+        border-color: transparent;
+    }
+    to {
+        border-color: #ffffff;
+    }
+}
+
 
 /* Animations */
 @keyframes fadeIn {

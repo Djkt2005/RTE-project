@@ -6,6 +6,27 @@ document.addEventListener('DOMContentLoaded', async () => {
     const summaryContainer = document.getElementById('summary-container'); // The container to display the summary
     summaryContainer.innerHTML = '<p>Loading...</p>';
 
+    
+
+   // Function to add typewriter effect
+function typewriterEffect(element, text, speed = 15) { // Faster typing speed
+    element.innerHTML = ''; // Clear the container
+    const span = document.createElement('span');
+    span.classList.add('typewriter-effect');
+    element.appendChild(span);
+
+    let i = 0;
+    const interval = setInterval(() => {
+        if (i < text.length) {
+            span.textContent += text[i];
+            i++;
+        } else {
+            clearInterval(interval); // Stop typing when complete
+        }
+    }, speed);
+}
+
+
     // Event Listeners for Navigation Buttons
     summaryBtn.addEventListener('click', () => {
         summarySection.style.display = 'flex';
@@ -55,7 +76,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 }
 
                 const summary = await response.text();
-                summaryContainer.innerHTML = `<p>${summary}</p>`;
+                typewriterEffect(summaryContainer, summary); // Apply typewriter effect
             } catch (error) {
                 console.error("Error fetching summary:", error);
                 summaryContainer.innerHTML = "<p>Error fetching summary.</p>";
