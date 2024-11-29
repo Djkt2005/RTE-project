@@ -37,18 +37,26 @@ FocusEdge is a feature-rich Chrome Extension designed to **supercharge your prod
 
 1. **Website Summarizer**  
    - Click the "Summary" tab to analyze and summarize the active tab's content 📋.  
-   - The extension uses **Puppeteer** to extract text and **Google Generative AI** to create summaries.  
+   - The extension uses **Puppeteer** to extract text and **Google Generative AI** to create summaries.
+   -  ![2](https://github.com/user-attachments/assets/a03b0d67-f9d3-498c-abdd-71968a34250f)
+
 
 2. **Chatbot Interaction**  
    - Switch to the "Chatbot" tab for an AI-powered conversation 💬.  
-   - Submit your queries and get intelligent responses based on the page content or external context.  
+   - Submit your queries and get intelligent responses based on the page content or external context.
+   -   ![1](https://github.com/user-attachments/assets/50428ef2-c83a-410a-9ed1-890882bd587c)
+
 
 3. **Ad Blocking**  
-   - Preloaded rules in `rules.json` block intrusive ads 🚫, improving browsing speed and focus.  
+   - Preloaded rules in `rules.json` block intrusive ads 🚫, improving browsing speed and focus.
+   - ![4](https://github.com/user-attachments/assets/b6259761-e221-40ce-b41e-634b9c063088)
+
 
 4. **Break Timer**  
    - Automatically starts a 90-minute countdown 🕒 when activated.  
-   - Updates the badge dynamically and notifies you when your break begins.  
+   - Updates the badge dynamically and notifies you when your break begins.
+   - ![3](https://github.com/user-attachments/assets/f14027c5-0d98-4195-a4b3-1016ee05f325)
+
 
 ---
 
