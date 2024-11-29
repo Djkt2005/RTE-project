@@ -1,63 +1,119 @@
-# RTE Project 🚀 (Real-Time Extension)
+# FocusEdge 🌟  
 
-## Problem Statement 📚  
-### **"Streamlining Web-Based Learning for Students and Researchers"** 🎓  
-In today’s digital age, students and researchers face challenges in effectively managing online resources, summarizing vast information, and organizing study materials from the web. These obstacles can lead to decreased productivity and focus during online learning sessions.  
-
-The RTE extension offers an all-in-one solution to help users:  
-- Highlight and save critical information 📌  
-- Organize notes into categorized folders for easy access 🗂️  
-- Summarize lengthy web pages for quick comprehension 🔑  
-
-Designed to enhance productivity and focus, this tool empowers students and researchers to navigate and utilize online resources more efficiently.
-
----
-
-## Industry Focused On 🎯  
-**Education Technology (EdTech)** - Revolutionizing the online study and research experience for students and professionals.
+FocusEdge is a feature-rich Chrome Extension designed to **supercharge your productivity** and streamline your browsing experience. By combining intelligent summarization 📖, AI chatbot 🤖, ad-blocking 🚫, and a break timer ⏰, FocusEdge ensures you stay focused, organized, and efficient while working online.  
 
 ---
 
 ## Features ✨  
 
-### **1. Webpage Summarizer**  
-Instantly generate concise summaries of active web pages, helping users save time and quickly grasp key points.
+### 1. **Website Summarizer 📚**  
+- Extracts meaningful content from web pages and generates concise summaries.  
+- Saves time ⏳ by providing key information at a glance without wading through clutter.  
+- Powered by **Google Generative AI** for top-notch summaries.  
 
-### **2. Highlight & Categorize Notes**  
-- Highlight important text and save it directly from any webpage.  
-- Organize saved notes and links into user-defined categories for better resource management.
+### 2. **AI-Powered Chatbot 🤖**  
+- Have real-time, intelligent conversations with an AI chatbot.  
+- Ask questions about summarized content or general topics 🌐.  
+- Chatbot responses are contextual, giving you meaningful insights.  
 
-### **3. 90-Minute Productivity Timer** ⏰  
-Encourage healthier study habits with a built-in timer that reminds users to take breaks after 90 minutes of continuous work.
+### 3. **Ad Blocking with Custom Rules 🚫**  
+- Blocks annoying ads and trackers, providing a cleaner, distraction-free browsing experience.  
+- Uses pre-configured rules to block domains like `doubleclick.net` and `googleadservices.com`.  
+- Fully customizable for additional filtering 🛠️.  
 
-### **4. Interactive Chatbot** 🤖  
-A smart assistant that:  
-- Answers study-related questions.  
-- Helps users organize notes.  
-- Provides motivational tips and productivity advice to stay on track.
+### 4. **Break Timer ⏰**  
+- Promotes healthy work habits by encouraging regular breaks 🧘‍♂️.  
+- Displays a dynamic countdown timer directly on the extension badge 🎯.  
+- Notifies you when it’s time to step away and refresh your mind 🍵.  
 
----
-
-## Technologies Used 🔧  
-
-### **Frontend Development**  
-- **HTML**: Builds the extension's structure and content.  
-- **CSS**: Creates a clean, responsive, and visually appealing user interface.  
-- **JavaScript**: Implements interactivity and functionality for features like summarization, note categorization, and the timer.  
-
-### **Backend Development**  
-- **Python**: Manages chatbot functionality and advanced summarization algorithms.  
-- **Flask/Django**: For creating the backend API that connects the frontend and backend seamlessly.  
-
-### **Data Storage & Communication**  
-- **JSON**: Saves user preferences, categorized notes, and summarized data locally or in the cloud.  
-- **Postman**: Tests API endpoints to ensure smooth communication between client and server.
-
-### **Additional APIs and Libraries**  
-- **Natural Language Processing (NLP)**: For accurate summarization and chatbot capabilities using libraries like SpaCy or NLTK.  
-- **Browser APIs**: Leverages APIs to enable features like highlighting and saving text directly from the browser.  
+### 5. **Seamless Integration 🚀**  
+- Simple and intuitive popup interface with quick navigation.  
+- Toggle effortlessly between summarization 📖 and chatbot features 🤝.  
+- Works within your browser, ensuring zero disruption to your workflow.  
 
 ---
 
-## Why It’s Perfect 🌟  
-The RTE extension aligns with the problem statement by offering a **focused, streamlined, and user-friendly approach** to online learning. It addresses real pain points like information overload and lack of organization, providing tools that empower students and researchers to maximize their productivity and learning outcomes.
+## How It Works 🛠️  
+
+1. **Website Summarizer**  
+   - Click the "Summary" tab to analyze and summarize the active tab's content 📋.  
+   - The extension uses **Puppeteer** to extract text and **Google Generative AI** to create summaries.  
+
+2. **Chatbot Interaction**  
+   - Switch to the "Chatbot" tab for an AI-powered conversation 💬.  
+   - Submit your queries and get intelligent responses based on the page content or external context.  
+
+3. **Ad Blocking**  
+   - Preloaded rules in `rules.json` block intrusive ads 🚫, improving browsing speed and focus.  
+
+4. **Break Timer**  
+   - Automatically starts a 90-minute countdown 🕒 when activated.  
+   - Updates the badge dynamically and notifies you when your break begins.  
+
+---
+
+## Technologies Used 💻  
+
+- **Chrome Extensions API**: Core functionality and browser integration.  
+- **Puppeteer**: For content scraping and extraction 🕸️.  
+- **Google Generative AI**: Summarization and chatbot intelligence 🤖.  
+- **Node.js with Express**: Backend API for summarization and chatbot services 🌐.  
+- **HTML, CSS, and JavaScript**: Interactive frontend and popup interface 🎨.  
+
+---
+
+## Getting Started 🚀  
+
+1. Clone the repository 🗂️.  
+2. Install backend dependencies:  
+   ```bash  
+   npm install  
+   ```  
+3. Create a `.env` file for environment variables:  
+   ```env  
+   API_KEY=your-google-generative-ai-key  
+   ```  
+4. Start the backend server 🖥️:  
+   ```bash  
+   node summarizer.mjs  
+   ```  
+5. Load the extension:  
+   - Go to `chrome://extensions/` 🔧.  
+   - Enable "Developer mode" and click "Load unpacked."  
+   - Select the folder containing `manifest.json`.  
+
+---
+
+## Inspiration and Resources 🌟  
+
+FocusEdge draws inspiration from various tutorials and resources to bring a **blend of cutting-edge features** into one cohesive solution.  
+
+### References 🔗  
+- [Learn Web Extensions 📹](https://youtube.com/playlist?list=PLC3y8-rFHvwg2-q6Kvw3Tl_4xhxtIaNlY)  
+- [Building AI Chatbots 🤖](https://youtu.be/Z8F6FvMrN4o)  
+- [Introduction to Puppeteer 🕸️](https://youtu.be/XVv6mJpFOb0)  
+- [Timer with Chrome Extensions ⏰](https://youtu.be/mBoX_JCKZTE)  
+- [Notifications in Chrome Extensions 🔔](https://youtu.be/wqRKEd0_suw)  
+- And more exciting tutorials included in the [resources list](#).  
+
+---
+
+## Future Plans 🚀  
+
+- Advanced filtering for more robust ad-blocking 🚫.  
+- Integration of **advanced AI models** for better chatbot accuracy 🤖.  
+- Multi-language support 🌍 for summaries and chatbot responses.  
+- Calendar synchronization for smarter break management 📅.  
+
+---
+
+## Contributors 🤝  
+
+This project was crafted with care and dedication by:  
+
+- **Krishant Tanti**  
+- **Om Sharma**  
+- **Darshit Sengra**  
+- **Yug Ramoliya**  
+
+FocusEdge: Your ultimate productivity companion to stay focused, informed, and efficient! ✨ 🚀 🌟  
