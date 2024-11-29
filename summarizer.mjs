@@ -34,7 +34,7 @@ async function start(url) {
         const allText = await page.evaluate(() => {
             // Collect all relevant elements from the page
             const elements = [
-                ...document.querySelectorAll('h1, h2, h3, p, a, span, div, li, article') // Adding more tags to scrape
+                ...document.querySelectorAll('h1, h2, h3, p, a, span, div, li, article, body') // Adding more tags to scrape
             ];
 
             // Extract the text content of these elements and return them as an array
