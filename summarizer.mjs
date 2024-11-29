@@ -30,16 +30,22 @@ async function start(url) {
         // Navigate to the specified URL
         await page.goto(url, { waitUntil: 'domcontentloaded' });
 
-        // Scrape the paragraphs from the page
-        const paragraphs = await page.evaluate(() => {
-            const elements = Array.from(document.querySelectorAll('div.mw-parser-output p'));
-            return elements.map(p => p.textContent.trim()).filter(text => text.length > 0);
+        // Scrape all text from various elements (headers, paragraphs, links, etc.)
+        const allText = await page.evaluate(() => {
+            // Collect all relevant elements from the page
+            const elements = [
+                ...document.querySelectorAll('h1, h2, h3, p, a, span, div, li, article') // Adding more tags to scrape
+            ];
+
+            // Extract the text content of these elements and return them as an array
+            return elements.map(el => el.textContent.trim()).filter(text => text.length > 0);
         });
 
         console.log("Content successfully extracted.");
         await browser.close();
 
-        return paragraphs.join("\r\n");
+        // Join the extracted text into a single string
+        return allText.join("\r\n");
     } catch (error) {
         console.error("Error occurred in Puppeteer:", error);
         return null;
@@ -97,5 +103,5 @@ app.post('/api/content', async (req, res) => {
 
 // Start the Server
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+    console.log(`Server is running on port ${port}`);
 });
